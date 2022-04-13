@@ -1,6 +1,6 @@
 <body>
     <h1>Editing Book</h1>
-<%= form_with model: @book, url: update_book_path(@book.id), method: :patch do |f| %>
+<%= form_with model: @book,  method: :patch do |f| %>
   <label for="book_title">Title</label>
   <div><%= f.text_field :title %></div>
 
@@ -11,9 +11,9 @@
     <input type="submit" name="commit" value="Update Book" data-disable-with="Update Book">
   </div>
 
-<a><%= link_to "Show", book_url %></a>
+<%= link_to "Show", book_path(@book.id) %>
 |
-<a class="back" href="/books">Back</a>
+<%= link_to "Back", books_path %>
 
 <% end %>
 
